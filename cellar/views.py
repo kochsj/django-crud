@@ -19,7 +19,9 @@ class WineCreateView(CreateView):
     fields = ['User', 'Winery', 'Grape', 'Year', 'Description', 'Image']
 
 class WineUpdateView(UpdateView):
-    pass
+    template_name = 'update.html'
+    model = Bottle
+    fields = ['User', 'Winery', 'Grape', 'Year', 'Description', 'Image']
 
 class WineDeleteView(DeleteView):
     template_name = 'delete_bottle.html'
