@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+<!-- {% load static %}  -->
+{% block content %}
+<h1>Remove a bottle</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Are you sure that you want to remove "{{ bottle.Year }} {{ bottle.Grape }} - {{ bottle.Winery }}"?</p>
+    <input type="submit" value="Confirm"/>
+</form>
+
+{% endblock content %}

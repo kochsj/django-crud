@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<header>
+    <nav>
+        <a href="{% url 'add_bottle' %}">Add a Bottle</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Current Inventory:</h2>
+    <ul>    
+        {% for bottle in cellar %}
+        <li><a href="{% url 'wine_detail' bottle.pk %}">{{ bottle.Winery }} - {{ bottle.User }}</a></li>
+        {% endfor %}
+    
+    </ul>  
+</section>
+{% endblock content %}

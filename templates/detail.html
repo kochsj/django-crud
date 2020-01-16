@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <h2>{{ bottle.Winery }} - {{ bottle.Grape }}</h2>
+    <p>{{ bottle.Description }}</p>
+    {% if bottle.Image %}
+    <img src="{% static bottle.Image.url %}" alt="">
+    {% endif %}
+    <a href="{% url 'update_bottle' bottle.pk %}">Update</a>
+    <a href="{% url 'delete_bottle' bottle.pk %}">Delete</a>
+</div> 
+{% endblock content %}
+
