@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>homepage yay</h1>
-<!-- <a href=""></a> -->
-<ul>
-    
-    {% for bottle in cellar %}
-    <li><a href="{% url 'wine_detail' bottle.pk %}">{{ bottle.Winery }} - {{ bottle.User }}</a></li>
-    {% endfor %}
+<header>
+    <h1>The Wine Cellar</h1>
+    <nav>
+        <a href="{% url 'add_bottle' %}">Add a Bottle</a>
+    </nav>
+</header>
 
-</ul>  
+<section>
+    <h2>Current Inventory:</h2>
+    <ul>    
+        {% for bottle in cellar %}
+        <li><a href="{% url 'wine_detail' bottle.pk %}">{{ bottle.Winery }} - {{ bottle.User }}</a></li>
+        {% endfor %}
+    
+    </ul>  
+</section>
 {% endblock content %}
