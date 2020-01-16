@@ -36,7 +36,7 @@ class Bottle(models.Model):
     Grape = models.CharField(choices=GRAPE_CHOICES, default=CAB, max_length=20)
     Year = models.IntegerField(choices=YEAR_CHOICES, default=current_year)
     Description = models.TextField()
-    Image = models.ImageField(upload_to='static/img', blank=True)
+    Image = models.ImageField(upload_to='static/', blank=True)
 
     def __str__(self):
         return self.Winery
